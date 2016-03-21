@@ -1,0 +1,217 @@
+/* reset */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+q:before,q:after{content:none;}
+textarea{overflow:auto;resize:none;}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
+del,ins,u,s,a,a:hover{text-decoration:none;}
+body,textarea,input,button,select,keygen,legend{font:12px/1.14 arial,\5b8b\4f53;color:#333;outline:0;}
+body{background:#fff;}
+a,a:hover{color:#333;}
+body{
+	background: #000;
+}
+.clearfix:after{
+	content: '.';
+	display: block;
+	clear: both;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+.header{
+	height: 56px;
+	width: 100%;
+	background: #2189bf;
+}
+.header img {
+	margin: 10px 0 0 100px;
+}
+.header .search{
+	float: right;
+	line-height: 56px;
+	margin-right: 150px;
+
+}
+.header .search input{
+	width: 312px;
+	height: 27px;
+	line-height: 27px;
+	border-radius: 15px;
+	background: url("images/search.png")  18px 5px no-repeat;
+	background-color: #fff;
+	text-indent: 50px;
+	border: none;
+}
+.header .search i{
+    display: inline-block;
+    width: 44px;
+    height: 51px;
+    color: #fff;
+    background: url("images/person.png") 0 20px no-repeat;
+    margin-left: 20px;
+    text-align: right;
+}
+.ctn{
+	width: 1280px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.leftSide{
+	float: left;
+	width: 260px;
+	padding-bottom: 9999px;
+	margin-bottom: -9999px;
+	color: #6e8095;
+	background: #2a2e3d;
+}
+.person{
+	height: 150px;
+ 	position: relative;
+}
+.person .pic div{
+	position: absolute;
+	top: 25px;
+	left: 50px;
+	width: 56px;
+	height: 56px;
+	border: 2px solid #bababe;
+	border-radius: 50%;
+}
+.person .pic i{
+	position: absolute;
+	top: 31px;
+	left: 56px;
+	width: 44px;
+	height: 44px;
+	border: 2px solid #bababe;
+	background: #bababe;
+	border-radius: 50%;
+}
+.person .pic span{
+	position: absolute;
+	top: 48px;
+	left: 120px;
+	color: #fff;
+	font-size: 18px;
+}
+.person .fav{
+	position: absolute;
+	top: 110px;
+	left: 70px;
+	width: 28px;
+
+}
+.person .fol{
+	position: absolute;
+	top: 110px;
+	left: 140px;
+	width: 28px;
+
+}
+.sd-nav>ul>li{
+	height: 50px;
+	line-height: 50px;
+	text-indent: 80px;
+}
+.sd-nav>ul>li:nth-child(1)
+{
+	background: url("images/table.png") 52px 19px no-repeat;
+
+}
+.sd-nav>ul>li:nth-child(3)
+{
+	background: url("images/star.png") 52px 19px no-repeat;
+}
+.sd-nav>ul>li:nth-child(4)
+{
+	background: url("images/share.png") 52px 19px no-repeat;
+}
+.sd-nav>ul>li:nth-child(5)
+{
+	background: url("images/star.png") 52px 19px no-repeat;
+}
+.sd-nav>ul>li:nth-child(6)
+{
+	background: url("images/star.png") 52px 19px no-repeat;
+}
+.sd-nav>ul>li:nth-child(7)
+{
+	background: url("images/cou.png") 52px 19px no-repeat;
+}
+
+/*二级li*/
+.sd-nav .per-table>li{
+	height: 40px;
+	line-height: 40px;
+	text-indent: 115px;
+}
+.sd-nav .per-table>li:nth-child(1)
+{
+	background: url("images/right.png") 80px 14px no-repeat,url("images/sha_file.png") 95px 14px no-repeat;
+
+}
+.sd-nav .per-table>li:nth-child(2)
+{
+	background: url("images/down.png") 79px 16px no-repeat,url("images/light_file.png") 95px 14px no-repeat;
+
+}
+.sd-nav .per-table>li:nth-child(4)
+{
+	background: url("images/right.png") 80px 14px no-repeat,url("images/sha_file.png") 95px 14px no-repeat;
+
+}
+/*三级li*/
+.sd-nav .per-table>div li{
+	height: 40px;
+	line-height: 40px;
+	text-indent: 130px;
+}
+.sd-nav .per-table>div li:nth-child(1)
+{
+	background: url("images/light_doc.png") 111px 15px no-repeat;
+
+}
+.sd-nav .per-table>div li:nth-child(2)
+{
+	background: url("images/sha_doc.png") 111px 15px no-repeat;
+
+}
+.select{
+	color: #fff;
+	background-color: #383d4e;
+}
+.main{
+	float: right;
+	width: 1020px;
+	background: #eeedec;
+	padding-bottom: 9999px;
+	margin-bottom: -9999px;
+}
+.main .nav{
+	height: 30px;
+	background: #fff;
+	padding-left: 30px;
+}
+.main .nav li{
+	float: left;
+	line-height: 30px;
+}
+.main .nav a{
+	margin: 0 15px;
+	color: #b0b0b0; 
+}
+.main .nav a:last-child{
+	color: #2289bf;
+}
