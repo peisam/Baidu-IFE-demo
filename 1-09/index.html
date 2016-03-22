@@ -27,26 +27,28 @@
 			</div>
 			<div class="sd-nav">
 				<ul>
-					<li class="select">个人报表</li>
-					<div >
+					<li class="select">
+						<a>个人报表</a>
+						<div>
 						<ul class="per-table">
-							<li>文件一</li>
-							<li class="select">文件二
+							<li><a href="">文件一</a></li>
+							<li><a href="">文件二</a>
+								<div>
+									<ul>
+										<li><a href="">文档一</a></li>
+										<li><a href="">文档二</a></li>
+									</ul>
+								</div>
 							</li>
-							<div>
-								<ul>
-									<li class="select">文档一</li>
-									<li>文档二</li>
-								</ul>
-							</div>
-							<li>文件三</li>
+							<li><a href="">文件三</a></li>
 						</ul>
-					</div>
-					<li>个人收藏</li>
-					<li>我的粉丝</li>
-					<li>图库</li>
-					<li>成长记录</li>
-					<li>账户信息</li>
+						</div>
+					</li>
+					<li><a href="">个人收藏</a></li>
+					<li><a href="">我的粉丝</a></li>
+					<li><a href="">图库</a></li>
+					<li><a href="">成长记录</a></li>
+					<li><a href="">账户信息</a></li>
 				</ul>
 			</div>
 		</div>
@@ -56,11 +58,132 @@
 					<li><a href="">C站</a> <strong >/ </strong></li>
 					<li><a href="">个人报表</a> <strong> / </strong></li>
 					<li><a href="">文件一</a> <strong> / </strong></li>
-					<li><a href="">文档一</a</li>
+					<li><a href="">文档一</a></li>
 				</ul>
 			</div>
 			<div class="sech">
-				
+				<form action="post">
+					<ul>
+						<li>
+							<label for="">查询项</label>
+							<select>
+								<option selected="selected">第一项</option>
+								<option>第二项</option>
+								<option>第三项</option>
+							</select>
+						</li>
+						<li>
+							<label for="">买房</label>
+							<select>
+								<option selected="selected">小A</option>
+								<option>小S</option>
+								<option>小C</option>
+							</select><br>	
+							<label for="">卖方</label>
+							<select>
+								<option selected="selected">小E</option>
+								<option>小G</option>
+								<option>小B</option>
+							</select>
+							<i></i>
+						</li>
+						<li>
+							<label for="">日期</label>
+							<select class="date">
+								<option selected="selected">2016-3-28</option>
+							</select>	
+							<label for="">总耗时</label>
+							<select>
+								<option selected="selected">7天</option>
+								<option>5天</option>
+								<option>8天</option>
+							</select><br>
+							<label for="">人数</label>
+							<select>
+								<option selected="selected">4人</option>
+								<option>3人</option>
+								<option>10人</option>
+							</select>	
+							<label for="">成交项</label>
+							<select class="count">
+								<option selected="selected">7项</option>
+								<option>4项</option>
+								<option>5项</option>
+							</select>
+						</li>
+						<li>
+							<button>搜索</button>
+						</li>
+					</ul>
+				</form>	
+			</div>
+			<div class="his">
+				<div class="toLeft"></div>
+				<ul>
+					<li>
+						<p>10:00 am</p>
+						<i>$</i>
+						<strong>1800</strong>
+					</li>
+					<li>
+						<p>11:00 am</p>
+						<i>$</i>
+						<strong>1800</strong>
+					</li>
+					<li>
+						<p>12:00 am</p>
+						<i>$</i>
+						<strong>1800</strong>
+					</li>
+					<li>
+						<p>03:00 pm</p>
+						<i>$</i>
+						<strong>1800</strong>
+					</li>
+					<li>
+						<p>04:00 pm</p>
+						<i>$</i>
+						<strong>1800</strong>
+					</li>
+					<li>
+						<p>05:00 pm</p>
+						<i>$</i>
+						<strong>1800</strong>
+					</li>
+				</ul>
+				<div class="toRight"></div>
+				<div class="his-sech">
+					历史查询
+				</div>
+			</div>
+			<div class="tal">
+				<p>2016年4月份统计</p>
+				<ul>
+					<li class="green col">
+						<p>113322</p>
+						<p>成交量</p>
+						<div >
+						</div>
+					</li>
+					<li class="blue col">
+						<p>113322</p>
+						<p>成交量</p>
+						<div >
+						</div>
+					</li>
+					<li class="red col">
+						<p>113322</p>
+						<p>成交量</p>
+						<div >
+						</div>
+					</li>
+					<li class="yellow col">
+						<p>113322</p>
+						<p>成交量</p>
+						<div >
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
