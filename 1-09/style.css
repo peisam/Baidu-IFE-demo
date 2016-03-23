@@ -17,10 +17,8 @@ a,button{cursor:pointer;}
 h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
 del,ins,u,s,a,a:hover{text-decoration:none;}
 body,textarea,input,button,select,keygen,legend{font:12px/1.14 arial,\5b8b\4f53;color:#333;outline:0;}
-body{background:#fff;}
-
 body{
-	background: #000;
+	background: #DCDEDF;
 }
 .clearfix:after{
 	content: '.';
@@ -390,7 +388,10 @@ body{
 	height: 40px;
 	line-height: 40px;
 	padding-left: 20px;
-	color: #746F6F
+	color: #746F6F;
+	background: #f4f5f7;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 .pro .mat>div,.pro .sign>div,.last .date>div,.last .car>div{
 	position: relative;
@@ -510,12 +511,148 @@ body{
 }
 .main .last{
 	height: 355px;
-	
+	margin-bottom: 30px;
 }
-.last .date{
+.main .last .date{
 	width: 350px;
 	margin-right: 10px;
 }
-.last .car{
-	width: 530px;
+.main .last .date .date-sel{
+	position: absolute;
+	top: 10px;
+    left: 25px;
 }
+.main .last .date .date-sel select{
+	margin-right: 12px;
+	height: 20px;
+	border: 1px solid #d0d2d5
+}
+.main .last .date .date-sel span {
+	display: inline-block;
+	width: 64px;
+	height: 18px;
+    line-height: 18px;
+	text-align: center;
+	border: 1px solid #d0d2d5
+}
+.main .last .date .week{
+	position: absolute;
+	top: 40px;
+    left: 25px;
+    right: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-top: 1px solid #a9cfec;
+    border-bottom: 1px solid #d0d2d5;
+}
+.main .last .date .week span,.main .last .date .date-item span{
+	display: inline-block;
+	width:  11.4%;
+	padding: 0 3px;
+	text-align: center;
+}
+.main .last .date .date-item{
+	position: absolute;
+	top: 72px;
+    left: 25px;
+    right: 25px;	
+}
+.main .last .date .date-item span{
+	height: 32px;
+    line-height: 17px;
+    width: 12%;
+    margin-bottom: 2px;
+    padding: 4px 2px;
+}
+.main .last .date .date-item span:hover{
+	background: #a9cfec;
+	color: #fff;
+}
+.main .last .date .weeken{
+	color: #cd3539;
+}
+.main .last .date .fes{
+	color: #cd3539;
+}
+.main .last .date .mark{
+	border: 1px solid #f5c52a
+}
+.main .last .car{
+	width: 523px;
+}
+.main .last .car table td{
+	border: 1px solid #d0d2d5;
+	text-align: center;
+	height: 25px;
+	padding: 0 21px;
+}
+.main .last .car table{
+	width: 80%;
+	margin: 0 auto;
+	
+}
+.main .last .car>div>div{
+	padding-top: 15px
+}
+.main .last .car tr:hover{
+	background: #f4f5f7;
+}
+.main .last .car .act{
+	background: #f4f5f7;
+}
+.main .last .car i{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	height: 3px;
+}
+.main .last .car .car-1 i{
+	width: 80%;
+	background: #ec6d51;
+}
+.main .last .car .car-2 i{
+	width: 78%;
+	background: #ef8150;
+}
+.main .last .car .car-3 i{
+	width: 75%;
+	background: #f19e4f;
+}
+.main .last .car .car-4 i{
+	width: 70%;
+	background: #9ed7f4;
+}
+.main .last .car .car-5 i{
+	width: 68%;
+	background: #516e7d;
+}
+.main .last .car .car-6 i{
+	width: 63%;
+	background: #6046c0;
+}
+.main .last .car .car-7 i{
+	width: 60%;
+	background: #582e3b;
+}
+.main .last .car .car-8 i{
+	width: 55%;
+	background: #aa969c;
+}
+.main .last .car .car-9 i{
+	width: 49%;
+	background: #ed6e52;
+}
+.main .last .car .car-10 i{
+	width: 45%;
+	background: #ed6e52;
+}
+.main .last .car  span{
+	position: relative;
+	display: inline-block;
+	width: 160px;
+	height: 3px;
+	margin-left: 20px;
+	background: #d0d2d5;	
+}
+
