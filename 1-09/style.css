@@ -272,7 +272,7 @@ body{
 	height: 62px;
 	margin-right: 10px; 
 }
-.main .his,.main .tal{
+.main .his,.main .tal,.main .pro,.main .last {
 	width: 890px;
 	height: 75px;
 	margin: 0 auto;
@@ -370,4 +370,152 @@ body{
 	width: 50%;
 	margin-top: 12px;
     margin-left: 10px;
+}
+.main .pro{
+	height: 355px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.pro .mat,.pro .sign,.last .date,.last .car{
+	display: inline-block;
+	height: 100%;
+	border: 1px solid #d0d2d5;
+	border-radius: 5px;
+}
+.pro .mat{
+	width: 530px;
+	margin-right: 10px;
+}
+.pro .mat h3,.pro .sign h3,.last .date h3,.last .car h3{
+	height: 40px;
+	line-height: 40px;
+	padding-left: 20px;
+	color: #746F6F
+}
+.pro .mat>div,.pro .sign>div,.last .date>div,.last .car>div{
+	position: relative;
+	height: 315px;
+	background: #fff;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+.pro .mat ul{
+	margin-left: 20px;
+}
+.pro .mat ul li {
+  	float: left;
+  	display: block;
+}
+.pro .mat input[type="radio"] {
+  	position: absolute;
+  	top: -9999px;
+  	left: -9999px;
+}
+.pro .mat label {
+	position: relative;
+	display: inline-block;
+    width: 80px;
+    height: 30px;
+    margin: 12px 10px 0 0;
+    line-height: 30px;
+    text-align: center;
+    background: #ededef;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+}
+.pro .mat .table-cnt{
+	position: absolute;
+	z-index: 2;
+    display: none;
+	border: 1px solid #d0d2d5;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    top: 42px;
+    background: #fff;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.pro .mat [id^="tab"]:checked + label {
+  	border: 1px solid #d0d2d5;
+  	border-bottom: none; 
+  	background: #fff;
+  	z-index: 3;
+}
+.pro .mat [id^="tab"]:checked ~ [id^="table-cnt"]{
+  	display: block;
+}
+.pro .mat .table-cnt table{
+	width: 80%;
+	margin: 30px auto;
+}
+.pro .mat .table-cnt table td{
+	width: 80px;
+	height: 31px;
+	line-height: 31px;
+	text-align: center;
+	border:  1px solid #d0d2d5;
+
+}
+.pro .sign{
+	width: 343px;
+	
+}  
+.pro .sign ul{
+	position: absolute;
+ }
+.pro .sign li{
+    padding: 8px 0 2px 15px;
+    margin: 2px 36px 2px 42px;
+ }
+.pro .sign li p {
+	color: gray;
+	margin: 2px 0 2px 0
+}
+.pro .sign li input{
+	border: none;
+	height: 20px;
+	line-height: 20px;
+}
+.pro .sign .price span{
+	display: inline-block;
+    width: 32%;
+}
+.pro .sign .price {
+	border: 1px solid #d0d2d5;
+	border-left: none;
+	border-right: none;
+}
+.pro .sign .despt {
+	height: 110px;
+	border-bottom: 1px solid #d0d2d5;
+}
+.pro .sign li:last-child input{
+	margin-top: 5px;
+}
+.pro .sign li  label{
+	vertical-align: super;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 103px;
+}
+.pro .sign li button{
+	width: 50px;
+	height: 25px;
+	background: #388bc2;
+	color: #fff;
+	border: none;
+}
+.main .last{
+	height: 355px;
+	
+}
+.last .date{
+	width: 350px;
+	margin-right: 10px;
+}
+.last .car{
+	width: 530px;
 }
