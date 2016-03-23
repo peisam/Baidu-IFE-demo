@@ -479,6 +479,7 @@ body{
 	border: none;
 	height: 20px;
 	line-height: 20px;
+	background: #fff;
 }
 .pro .sign .price span{
 	display: inline-block;
