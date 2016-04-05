@@ -1,6 +1,6 @@
 {
   "name": "Baidu-ife-demo",
   "tagline": "百度前端技术学院任务实践在线演示仓库",
-  "body": "<ul>\r\n<li><a href=\"http://peisam.github.io/Baidu-IFE-demo/1-07/index.html\">任务七：实现常见的技术产品官网的页面架构及样式布局</a></li>\r\n<li><a href=\"http://peisam.github.io/Baidu-IFE-demo/1-09/index.html\">任务九：使用HTML/CSS实现一个复杂页面</a></li>\r\n</ul>",
+  "body": "<ul>\r\n<li><a href=\"http://peisam.github.io/Baidu-IFE-demo/1-07/index.html\">任务七：实现常见的技术产品官网的页面架构及样式布局</a></li>\r\n<li><a href=\"http://peisam.github.io/Baidu-IFE-demo/1-09/index.html\">任务九：使用HTML/CSS实现一个复杂页面</a></li>\r\n<li><a href=\"http://peisam.github.io/Baidu-IFE-demo/2-22/index.html\">任务二十二：JavaScript和树（一）</a></li>\r\n</ul>",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
