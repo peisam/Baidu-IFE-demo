@@ -1,0 +1,102 @@
+(function(){
+	var iArray = document.getElementsByTagName("i"),
+		len = iArray.length,
+		root = iArray[0],
+		interval;
+	for (var i = len - 1; i >= 0; i--) {	
+		if (i%2 == 0) {
+			iArray[i].prototype = {
+				LC: iArray[i*2+1],
+				RC: iArray[i*2+2],	
+				V : iArray[i/2-2]	
+			}
+		}else{
+			iArray[i].prototype = {
+				LC: iArray[i*2+1],
+				RC: iArray[i*2+2],	
+				V : iArray[(i-1)/2]	
+			}
+		}
+		iArray[0].prototype = {
+				LC: iArray[i*2+1],
+				RC: iArray[i*2+2],
+				V : null	
+			}
+	};
+	for(var i = len - 2; i >= (len - 1)/2; i--){
+			iArray[i].prototype = {
+				LC: null,
+				RC: null,	
+			}
+		}
+	if (len%2 == 0 ) {
+		iArray[Math.ceil((len - 2)/2)].prototype = {
+				RC: null	
+			}
+	}
+	var changeBg = function(stack){
+		var lenStack = stack.length,
+			i = 0;
+	 	interval = setInterval(function(){
+			if (i < len ) {
+				stack[i].style.backgroundColor = "green";
+				i++;
+			}else{
+				clearInterval(interval);
+			}
+		},1000)
+	}
+
+	var travPre = function(node,stack){
+		if(!node) return;
+		stack.push(node);
+		travPre(node.prototype.LC,stack);
+		travPre(node.prototype.RC,stack);
+	}
+	var travIn = function(node,stack){
+		if(!node) return;
+		travIn(node.prototype.LC,stack);
+		stack.push(node);
+		travIn(node.prototype.RC,stack);
+	}
+	var travPost = function(node,stack){
+		if(!node) return;		
+		travPost(node.prototype.LC,stack);
+		travPost(node.prototype.RC,stack);
+		stack.push(node);
+	}
+	function butOnclick(type){
+		var nodeStack = [];
+		reset();
+		switch(type){
+			case 'pre':
+				travPre(root,nodeStack);
+				break;
+			case 'in':
+				travIn(root,nodeStack);
+				break;
+			case 'post':
+				travPost(root,nodeStack);
+				break;
+
+		}
+		changeBg(nodeStack);
+	}
+	var reset = function(){
+		for (var i = len - 1; i >= 0; i--) {
+			iArray[i].style.backgroundColor = "yellow";
+		};
+		clearInterval(interval);
+	}
+	document.getElementById("pre").onclick = function(){
+		butOnclick("pre");
+	}
+	document.getElementById("in").onclick = function(){
+		console.log(1);
+		butOnclick("in");
+	}
+	document.getElementById("post").onclick = function(){
+		console.log(1);
+		butOnclick("post");
+	}
+})()	
