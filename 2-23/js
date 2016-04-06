@@ -1,0 +1,169 @@
+(function(){
+	var iArray = document.getElementsByTagName("i"),
+		len = iArray.length,
+		root = iArray[0],
+		interval;
+	for (var i = 0; i < len ; i++) {
+		iArray[i].prototype = {
+				LC: iArray[i*2+1],
+				RC: iArray[i*2+2],
+				DIS: true
+			}
+		i%2 == 0 ? iArray[i].prototype.V = iArray[(i-2)/2]:iArray[i].prototype.V = iArray[(i-1)/2]
+		
+	}
+	iArray[0].prototype.V = null
+	for(var i = len - 2; i >= (len - 1)/2; i--){
+			iArray[i].prototype.LC = null;
+			iArray[i].prototype.RC = null;
+		}
+	if (len%2 == 0 ) {
+		iArray[Math.ceil((len - 2)/2)].prototype.RC = null;
+	}
+
+	for(var i = 0; i < len - 1; i++){
+		if (iArray[i].prototype.V == iArray[i + 1].prototype.V) {
+			var random = parseInt(Math.random()*100000) + 823456;
+			iArray[i].parentNode.style.backgroundColor = "#" + random;
+			iArray[i + 1].parentNode.style.backgroundColor = "#" + random;
+		};
+	}
+
+	var render = function(){
+		var newIarray = document.getElementsByTagName("i"),
+			newlen = newIarray.length;
+
+		for(var i = 0 ; i < newlen ; i++){
+			if (!newIarray[i].prototype.DIS) {
+				newIarray[i].style.display = "none";
+				newlen--;
+			}	
+		}
+		for(var i = 0 ; i < newlen ; i++ ){
+			if (newIarray[i].prototype.DIS) {
+				newIarray[i].innerHTML = i;
+			}
+		}
+
+		iArray = newIarray;
+		len = newlen;
+	}
+	render();
+
+
+	var eventRender = function(){
+		var timer;
+		for(var i = 0 ; i < len ; i++){
+			iArray[i].dataset = {
+									flag : true,
+									inserted : false,
+									timer : null
+								};
+			iArray[i].onmouseenter  = function(){
+				var self = this;
+				if (this.dataset.timer) {clearTimeout(timer)};
+				if (this.dataset.inserted) { 
+					this.nextElementSibling.style.display = "block"; 
+					return;
+				};
+				var divNode = document.createElement("ul");
+				divNode.innerHTML = "<li class='del'>删除本节点</li><li class='add'>新增子节点</li>";
+				divNode.onmouseenter = function(){ self.dataset.flag = false;}
+				divNode.onmouseleave = function(){ self.dataset.flag = true;}
+				this.parentNode.appendChild(divNode);
+				this.dataset.inserted = true;
+				return self;
+			}
+			iArray[i].onmouseleave  = function(){
+					var self = this,
+						closed = true;
+					if (this.dataset.flag) {
+							this.nextElementSibling.style.display = "none";
+						closed = false;
+					};
+					if (closed) {
+							this.dataset.timer = setTimeout(function(){
+								self.nextElementSibling.style.display = "none";
+							},2000)
+					};
+					
+
+				
+			}
+
+		}
+	}
+
+	eventRender();
+	var addNode = function(obj){
+
+	}
+	var changeBg = function(stack){
+		var lenStack = stack.length,
+			i = 0;
+			console.log(stack)
+	 	interval = setInterval(function(){
+			if (i < len ) {
+				stack[i].style.backgroundColor = "green";
+				i++;
+			}else{
+				clearInterval(interval);
+			}
+		},1000)
+	}
+
+	var travPre = function(node,stack){
+		if(!node) return;
+		stack.push(node);
+		travPre(node.prototype.LC,stack);
+		travPre(node.prototype.RC,stack);
+	}
+	var travIn = function(node,stack){
+		if(!node) return;
+		travIn(node.prototype.LC,stack);
+		stack.push(node);
+		travIn(node.prototype.RC,stack);
+	}
+	var travPost = function(node,stack){
+		if(!node) return;		
+		travPost(node.prototype.LC,stack);
+		travPost(node.prototype.RC,stack);
+		stack.push(node);
+	}
+	function butOnclick(type){
+		var nodeStack = [];
+		reset();
+
+		switch(type){
+			case 'pre':
+				travPre(root,nodeStack);
+				break;
+			case 'in':
+				travIn(root,nodeStack);
+				break;
+			case 'post':
+				travPost(root,nodeStack);
+				break;
+
+		}
+		changeBg(nodeStack);
+	}
+
+	var reset = function(){
+		for (var i = len - 1; i >= 0; i--) {
+			iArray[i].style.backgroundColor = "yellow";
+		};
+		clearInterval(interval);
+	}
+
+	document.getElementById("pre").onclick = function(){
+		butOnclick("pre");
+	}
+	document.getElementById("in").onclick = function(){
+		butOnclick("in");
+	}
+	document.getElementById("post").onclick = function(){
+		console.log(1);
+		butOnclick("post");
+	}
+})()	

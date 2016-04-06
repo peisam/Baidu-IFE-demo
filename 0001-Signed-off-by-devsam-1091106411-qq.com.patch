@@ -1,0 +1,103 @@
+From 56a29f9bfba1a7fc2dfa0b58e75a6de7c41596b1 Mon Sep 17 00:00:00 2001
+From: devsam <1091106411@qq.com>
+Date: Wed, 6 Apr 2016 15:30:09 +0800
+Subject: [PATCH] Signed-off-by: devsam <1091106411@qq.com> code review
+
+---
+ 2-22/js        | 44 ++++++++++++++++++++------------------------
+ 2-22/style.css |  5 ++++-
+ 2 files changed, 24 insertions(+), 25 deletions(-)
+
+diff --git a/2-22/js b/2-22/js
+index c19c6b9..417c1b3 100644
+--- a/2-22/js
++++ b/2-22/js
+@@ -3,40 +3,35 @@
+ 		len = iArray.length,
+ 		root = iArray[0],
+ 		interval;
+-	for (var i = len - 1; i >= 0; i--) {	
+-		if (i%2 == 0) {
+-			iArray[i].prototype = {
+-				LC: iArray[i*2+1],
+-				RC: iArray[i*2+2],	
+-				V : iArray[i/2-2]	
+-			}
+-		}else{
+-			iArray[i].prototype = {
+-				LC: iArray[i*2+1],
+-				RC: iArray[i*2+2],	
+-				V : iArray[(i-1)/2]	
+-			}
+-		}
+-		iArray[0].prototype = {
++	for (var i = 0; i < len ; i++) {
++		iArray[i].prototype = {
+ 				LC: iArray[i*2+1],
+ 				RC: iArray[i*2+2],
+-				V : null	
++				DIS: true
+ 			}
+-	};
++		i%2 == 0 ? iArray[i].prototype.V = iArray[(i-2)/2]:iArray[i].prototype.V = iArray[(i-1)/2]
++		
++	}
++	iArray[0].prototype.V = null
+ 	for(var i = len - 2; i >= (len - 1)/2; i--){
+-			iArray[i].prototype = {
+-				LC: null,
+-				RC: null,	
+-			}
++			iArray[i].prototype.LC = null;
++			iArray[i].prototype.RC = null;
+ 		}
+ 	if (len%2 == 0 ) {
+-		iArray[Math.ceil((len - 2)/2)].prototype = {
+-				RC: null	
+-			}
++		iArray[Math.ceil((len - 2)/2)].prototype.RC = null;
++	}
++
++	for(var i = 0; i < len - 1; i++){
++		if (iArray[i].prototype.V == iArray[i + 1].prototype.V) {
++			var random = parseInt(Math.random()*100000) + 823456;
++			iArray[i].parentNode.style.backgroundColor = "#" + random;
++			iArray[i + 1].parentNode.style.backgroundColor = "#" + random;
++		};
+ 	}
+ 	var changeBg = function(stack){
+ 		var lenStack = stack.length,
+ 			i = 0;
++			console.log(stack)
+ 	 	interval = setInterval(function(){
+ 			if (i < len ) {
+ 				stack[i].style.backgroundColor = "green";
+@@ -68,6 +63,7 @@
+ 	function butOnclick(type){
+ 		var nodeStack = [];
+ 		reset();
++
+ 		switch(type){
+ 			case 'pre':
+ 				travPre(root,nodeStack);
+diff --git a/2-22/style.css b/2-22/style.css
+index 24198b4..c2f484c 100644
+--- a/2-22/style.css
++++ b/2-22/style.css
+@@ -1,9 +1,12 @@
++body{
++    background: #fff;
++}
+ .cnt {
+     width: 1000px;
+     margin: 50px auto;
+     padding: 20px;
+     box-shadow: 0px 1px 1px 1px gray;
+-    background: #eee;
++    background: #555;
+ }
+ 
+ .cnt div {
+-- 
+2.7.2.windows.1
+
