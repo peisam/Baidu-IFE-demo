@@ -1,9 +1,12 @@
+body{
+    background: #fff;
+}
 .cnt {
     width: 1000px;
     margin: 50px auto;
     padding: 20px;
     box-shadow: 0px 1px 1px 1px gray;
-    background: #eee;
+    background: #555;
 }
 
 .cnt div {

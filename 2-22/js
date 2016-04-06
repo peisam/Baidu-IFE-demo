@@ -3,40 +3,35 @@
 		len = iArray.length,
 		root = iArray[0],
 		interval;
-	for (var i = len - 1; i >= 0; i--) {	
-		if (i%2 == 0) {
-			iArray[i].prototype = {
-				LC: iArray[i*2+1],
-				RC: iArray[i*2+2],	
-				V : iArray[i/2-2]	
-			}
-		}else{
-			iArray[i].prototype = {
-				LC: iArray[i*2+1],
-				RC: iArray[i*2+2],	
-				V : iArray[(i-1)/2]	
-			}
-		}
-		iArray[0].prototype = {
+	for (var i = 0; i < len ; i++) {
+		iArray[i].prototype = {
 				LC: iArray[i*2+1],
 				RC: iArray[i*2+2],
-				V : null	
+				DIS: true
 			}
-	};
+		i%2 == 0 ? iArray[i].prototype.V = iArray[(i-2)/2]:iArray[i].prototype.V = iArray[(i-1)/2]
+		
+	}
+	iArray[0].prototype.V = null
 	for(var i = len - 2; i >= (len - 1)/2; i--){
-			iArray[i].prototype = {
-				LC: null,
-				RC: null,	
-			}
+			iArray[i].prototype.LC = null;
+			iArray[i].prototype.RC = null;
 		}
 	if (len%2 == 0 ) {
-		iArray[Math.ceil((len - 2)/2)].prototype = {
-				RC: null	
-			}
+		iArray[Math.ceil((len - 2)/2)].prototype.RC = null;
+	}
+
+	for(var i = 0; i < len - 1; i++){
+		if (iArray[i].prototype.V == iArray[i + 1].prototype.V) {
+			var random = parseInt(Math.random()*100000) + 823456;
+			iArray[i].parentNode.style.backgroundColor = "#" + random;
+			iArray[i + 1].parentNode.style.backgroundColor = "#" + random;
+		};
 	}
 	var changeBg = function(stack){
 		var lenStack = stack.length,
 			i = 0;
+			console.log(stack)
 	 	interval = setInterval(function(){
 			if (i < len ) {
 				stack[i].style.backgroundColor = "green";
@@ -68,6 +63,7 @@
 	function butOnclick(type){
 		var nodeStack = [];
 		reset();
+
 		switch(type){
 			case 'pre':
 				travPre(root,nodeStack);
